@@ -11,6 +11,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.stablematching.client.Tenant;
+import com.stablematching.constants.Constant;
 import com.stablematching.model.Rank;
 import com.stablematching.resources.ServiceResource;
 
@@ -36,14 +37,14 @@ public class JSONHelper {
     /** @param tenantJson
      * @param tenants */
     public static void getTenantList(JSONObject tenantJson, List<Tenant> tenants) {
-        JSONArray tenantArray = tenantJson.getJSONArray("tenants");
+        JSONArray tenantArray = tenantJson.getJSONArray(Constant.TENANTS);
         for (int i = 0; i < tenantArray.length(); i++) {
             JSONObject tenatObject = tenantArray.getJSONObject(i);
             Tenant tenant = new Tenant();
-            tenant.setName(tenatObject.getString("name"));
-            tenant.setAvailability(tenatObject.getDouble("availability"));
-            tenant.setResponseTime(tenatObject.getDouble("responseTime"));
-            tenant.setCost(tenatObject.getDouble("cost"));
+            tenant.setName(tenatObject.getString(Constant.NAME));
+            tenant.setAvailability(tenatObject.getDouble(Constant.AVAILABILITY));
+            tenant.setResponseTime(tenatObject.getDouble(Constant.RESPONSE_TIME));
+            tenant.setCost(tenatObject.getDouble(Constant.COST));
             tenants.add(tenant);
         }
     }
@@ -51,14 +52,14 @@ public class JSONHelper {
     /** @param serviceResourceJson
      * @param serviceResources */
     public static void getServiceResourceList(JSONObject serviceResourceJson, List<ServiceResource> serviceResources) {
-        JSONArray serviceResourceArray = serviceResourceJson.getJSONArray("services");
+        JSONArray serviceResourceArray = serviceResourceJson.getJSONArray(Constant.SERVICES);
         for (int i = 0; i < serviceResourceArray.length(); i++) {
             JSONObject serviceResourceObject = serviceResourceArray.getJSONObject(i);
             ServiceResource serviceResource = new ServiceResource();
-            serviceResource.setName(serviceResourceObject.getString("name"));
-            serviceResource.setAvailability(serviceResourceObject.getDouble("availability"));
-            serviceResource.setResponseTime(serviceResourceObject.getDouble("responseTime"));
-            serviceResource.setCost(serviceResourceObject.getDouble("cost"));
+            serviceResource.setName(serviceResourceObject.getString(Constant.NAME));
+            serviceResource.setAvailability(serviceResourceObject.getDouble(Constant.AVAILABILITY));
+            serviceResource.setResponseTime(serviceResourceObject.getDouble(Constant.RESPONSE_TIME));
+            serviceResource.setCost(serviceResourceObject.getDouble(Constant.COST));
             serviceResources.add(serviceResource);
         }
     }
@@ -72,7 +73,7 @@ public class JSONHelper {
             JSONObject object = createRankObject(tenant.getRanks(), tenant.getName());
             jsonArray.put(object);
         }
-        jsonObject.put("tenants", jsonArray);
+        jsonObject.put(Constant.TENANTS, jsonArray);
         return jsonObject;
     }
 
@@ -85,7 +86,7 @@ public class JSONHelper {
             JSONObject object = createRankObject(service.getRanks(), service.getName());
             jsonArray.put(object);
         }
-        jsonObject.put("services", jsonArray);
+        jsonObject.put(Constant.SERVICES, jsonArray);
         return jsonObject;
     }
 
@@ -94,10 +95,10 @@ public class JSONHelper {
      * @return */
     private static JSONObject createRankObject(List<Rank> ranks, String name) {
         JSONObject rankObj = new JSONObject();
-        rankObj.put("name", name);
-        rankObj.put("cost", getValue(ranks, "cost"));
-        rankObj.put("availability", getValue(ranks, "availability"));
-        rankObj.put("responseTime", getValue(ranks, "responseTime"));
+        rankObj.put(Constant.NAME, name);
+        rankObj.put(Constant.COST, getValue(ranks, Constant.COST));
+        rankObj.put(Constant.AVAILABILITY, getValue(ranks, Constant.AVAILABILITY));
+        rankObj.put(Constant.RESPONSE_TIME, getValue(ranks, Constant.RESPONSE_TIME));
         return rankObj;
     }
 

@@ -16,14 +16,14 @@ public class RankOneService implements RankService {
         Rank rank = new Rank();
         double availability = tenant.getAvailability();
         double responseTime = tenant.getResponseTime();
-        if ((availability >= Thresholds.AVAILABILITY.getValue() && RankHelper.canSetRank(ranks, "availability"))) {
-            RankHelper.createRank("availability", rank, Constant.NUMBERS.ONE);
+        if ((availability >= Thresholds.AVAILABILITY.getValue() && RankHelper.canSetRank(ranks, Constant.AVAILABILITY))) {
+            RankHelper.createRank(Constant.AVAILABILITY, rank, Constant.NUMBERS.ONE);
         } else
 
-        if (responseTime <= Thresholds.RESPONSETIME.getValue() && RankHelper.canSetRank(ranks, "responseTime")) {
-            RankHelper.createRank("responseTime", rank, Constant.NUMBERS.ONE);
-        } else if (RankHelper.canSetRank(ranks, "cost")) {
-            RankHelper.createRank("cost", rank, Constant.NUMBERS.ONE);
+        if (responseTime <= Thresholds.RESPONSETIME.getValue() && RankHelper.canSetRank(ranks, Constant.RESPONSE_TIME)) {
+            RankHelper.createRank(Constant.RESPONSE_TIME, rank, Constant.NUMBERS.ONE);
+        } else if (RankHelper.canSetRank(ranks, Constant.COST)) {
+            RankHelper.createRank(Constant.COST, rank, Constant.NUMBERS.ONE);
         }
         tenant.getRanks().add(rank);
         return rank;
@@ -34,14 +34,14 @@ public class RankOneService implements RankService {
         Rank rank = new Rank();
         double availability = service.getAvailability();
         double responseTime = service.getResponseTime();
-        if ((availability >= Thresholds.AVAILABILITY.getValue() && RankHelper.canSetRank(ranks, "availability"))) {
-            RankHelper.createRank("availability", rank, Constant.NUMBERS.ONE);
+        if ((availability >= Thresholds.AVAILABILITY.getValue() && RankHelper.canSetRank(ranks, Constant.AVAILABILITY))) {
+            RankHelper.createRank(Constant.AVAILABILITY, rank, Constant.NUMBERS.ONE);
         } else
 
-        if (responseTime <= Thresholds.RESPONSETIME.getValue() && RankHelper.canSetRank(ranks, "responseTime")) {
-            RankHelper.createRank("responseTime", rank, Constant.NUMBERS.ONE);
-        } else if (RankHelper.canSetRank(ranks, "cost")) {
-            RankHelper.createRank("cost", rank, Constant.NUMBERS.ONE);
+        if (responseTime <= Thresholds.RESPONSETIME.getValue() && RankHelper.canSetRank(ranks, Constant.RESPONSE_TIME)) {
+            RankHelper.createRank(Constant.RESPONSE_TIME, rank, Constant.NUMBERS.ONE);
+        } else if (RankHelper.canSetRank(ranks, Constant.COST)) {
+            RankHelper.createRank(Constant.COST, rank, Constant.NUMBERS.ONE);
         }
         service.getRanks().add(rank);
     }

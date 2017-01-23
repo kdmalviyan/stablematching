@@ -18,4 +18,11 @@ public class Constant {
         Integer NINE = 9;
         Integer ZERO = 0;
     }
+
+    public static final String TENANTS = "tenants";
+    public static final String NAME = "name";
+    public static final String AVAILABILITY = "availability";
+    public static final String RESPONSE_TIME = "responseTime";
+    public static final String COST = "cost";
+    public static final String SERVICES = "services";
 }
