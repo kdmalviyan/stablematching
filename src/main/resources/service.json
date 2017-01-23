@@ -1,0 +1,28 @@
+{
+  "services": [
+    {
+      "name": "SCP1",
+      "availability": 95,
+      "responseTime": 4,
+      "cost": 43
+    },
+    {
+      "name": "SCP2",
+      "availability": 98,
+      "responseTime": 2,
+      "cost": 57
+    },
+    {
+      "name": "SCP3",
+      "availability": 97,
+      "responseTime": 3,
+      "cost": 51
+    },
+    {
+      "name": "SCP4",
+      "availability": 96,
+      "responseTime": 3,
+      "cost": 45
+    }
+  ]
+}

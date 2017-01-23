@@ -1,0 +1,1 @@
+{"tenants":[{"cost":1,"responseTime":3,"name":"T1","availability":2},{"cost":3,"responseTime":2,"name":"T2","availability":1},{"cost":2,"responseTime":1,"name":"T3","availability":3}]}

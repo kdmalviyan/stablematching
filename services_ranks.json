@@ -1,0 +1,1 @@
+{"services":[{"cost":1,"responseTime":3,"name":"SCP1","availability":2},{"cost":3,"responseTime":2,"name":"SCP2","availability":1},{"cost":2,"responseTime":3,"name":"SCP3","availability":1},{"cost":1,"responseTime":3,"name":"SCP4","availability":2}]}

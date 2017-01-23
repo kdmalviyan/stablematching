@@ -1,0 +1,22 @@
+{
+  "tenants": [
+    {
+      "name": "T1",
+      "availability": 95,
+      "responseTime": 4,
+      "cost": 45
+    },
+    {
+      "name": "T2",
+      "availability": 99,
+      "responseTime": 1,
+      "cost": 60
+    },
+    {
+      "name": "T3",
+      "availability": 96,
+      "responseTime": 2,
+      "cost": 55
+    }
+  ]
+}
